@@ -8,7 +8,7 @@ import Hero from './components/Hero';
 function App() {
   return (
     <Router>
-      <div className='App w-full h-screen bg-slate-800'>
+      <div className='App w-full h-screen bg-sharp-glass'>
         <Navbar/>
         
         <Routes>

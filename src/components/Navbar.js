@@ -12,8 +12,8 @@ function Navbar() {
     }
 
   return (
-    <header className='flex fixed w-full h-16 px-5 sm:px-8 justify-between items-center'>
-        <h1 className='text-lg sm:text-xl md:text-2xl lg:text-3xl text-slate-200 font-semibold'>Essousy Achraf 👨‍💻</h1>
+    <header className='flex fixed w-full h-16 px-5 sm:px-8 justify-between items-center z-50'>
+        <h1 className='text-md sm:text-xl md:text-2xl lg:text-3xl text-slate-200 font-semibold'>Achraf Codes👨‍💻</h1>
         <nav className='w-5/12 px-6 md:flex hidden'>
             <ul className='w-full flex justify-between'>
                 <li>
@@ -41,7 +41,7 @@ function Navbar() {
                 </li>
             </ul>
         </nav>
-        <button className='CTC text-lg md:text-2xl font-semibold text-slate-200 bg-sky-500 py-1 px-3 sm:px-5 md:px-7 rounded-full'>Let's work</button>
+        <button className='CTC text-md sm:text-lg md:text-2xl font-semibold text-slate-200 bg-sky-500 py-1 px-3 sm:px-5 md:px-7 rounded-full'>Let's work</button>
     </header>
   )
 }

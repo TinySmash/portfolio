@@ -23,6 +23,10 @@ code {
     monospace;
 }
 
+.bg-sharp-glass {
+  background: linear-gradient(-45deg, #4b749f, #243748);
+}
+
 
 /*NAVBAR*/
 
@@ -60,3 +64,29 @@ code {
     opacity: 100%;
   }
  }
+
+ /* HERO */
+
+ @keyframes socialMediaIcon {
+  from {
+    transform: translateY(0);
+    box-shadow: none;
+  }
+  to {
+    transform: translateY(-12px);
+    box-shadow: -0 0 5px  #a3a3a3,
+    0 0 25px  #a3a3a3,
+    0 0 50px  #a3a3a3,
+    0 0 100px;
+  }
+ }
+
+.sm-icon:hover{
+  animation: socialMediaIcon;
+  animation-duration: 0.7s;
+  transform: translateY(-12px);
+    box-shadow: -0 0 5px  #a3a3a3,
+    0 0 25px  #a3a3a3,
+    0 0 50px  #a3a3a3,
+    0 0 100px;
+}

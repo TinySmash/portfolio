@@ -17,7 +17,7 @@ function Navbar() {
         <nav className='w-5/12 px-6 md:flex hidden'>
             <ul className='w-full flex justify-between'>
                 <li>
-                    <Link to="About" className='text-slate-200 font-medium md:text-lg md:font-semibold'>About</Link>
+                    <Link to="about" className='text-slate-200 font-medium md:text-lg md:font-semibold'>About</Link>
                 </li>
                 <li>
                     <Link to="skills" className='text-slate-200 font-medium md:text-lg md:font-semibold'>Skills</Link>
@@ -31,7 +31,7 @@ function Navbar() {
         <nav className='mobile-menu w-4/5 px-6 fixed hidden md:hidden top-16'>
             <ul className='w-full flex justify-between'>
                 <li>
-                    <Link to="About" className='text-slate-200 font-medium md:text-lg md:font-semibold'>About</Link>
+                    <Link to="about" className='text-slate-200 font-medium md:text-lg md:font-semibold'>About</Link>
                 </li>
                 <li>
                     <Link to="skills" className='text-slate-200 font-medium md:text-lg md:font-semibold'>Skills</Link>

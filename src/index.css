@@ -18,6 +18,10 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+body::-webkit-scrollbar {
+  display: none;
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
@@ -90,3 +94,25 @@ code {
     0 0 50px  #a3a3a3,
     0 0 100px;
 }
+ .Hero {
+  background-image: url("./images/1414.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+ }
+
+ /* HERO */
+
+ @keyframes aboutTitle {
+  from {
+    transform: translateX(-100px);
+  }
+  to {
+    transform: translateX(0);
+  }
+ }
+
+ .about-title {
+  animation: aboutTitle;
+  animation-duration: 0.7s;
+ }

@@ -27,6 +27,10 @@ code {
     monospace;
 }
 
+Fragment {
+  position: absolute;
+}
+
 .bg-sharp-glass {
   background: linear-gradient(-45deg, #4b749f, #243748);
 }
@@ -109,10 +113,27 @@ code {
   }
   to {
     transform: translateX(0);
+    z-index: 999;
   }
  }
 
- .about-title {
+ /* ABOUT */
+
+ .about-title , .description{
   animation: aboutTitle;
   animation-duration: 0.7s;
+  z-index: 999;
  }
+
+ .description {
+  z-index: 999;
+  position: relative;
+ }
+
+.circle {
+  /* opacity: .8; */
+  top: 20%;
+  left: 40%;
+  clip-path: circle(50% at 57% 85%); 
+  z-index: 0;
+}

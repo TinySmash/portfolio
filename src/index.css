@@ -137,3 +137,9 @@ Fragment {
   clip-path: circle(50% at 57% 85%); 
   z-index: 0;
 }
+
+@media screen and (max-width:500px) {
+  .circle {
+    clip-path: circle(28% at 45% 77%); 
+  }
+}

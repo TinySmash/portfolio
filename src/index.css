@@ -143,3 +143,12 @@ Fragment {
     clip-path: circle(28% at 45% 77%); 
   }
 }
+
+/* SKILLS */
+
+.skills {
+  background-image: url("./images/1414.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}

@@ -6,7 +6,7 @@ export default function About() {
   const navigate = useNavigate();
 
   return (
-    <div className='w-full h-screen absolute p-6 overflow-hidden'>
+    <div className='w-full h-screen bg-sharp-glass absolute p-6 overflow-hidden'>
       <div className='circle bg-gray-900 absolute w-full h-full'></div>
       <h1 className="about-title mt-24 text-4xl md:text-5xl font-bold text-slate-200 md:ml-8">About me:</h1>
       <p className='description text-2xl mt-10 text-slate-300 bg-gray-900 rounded-xl p-6 md:w-2/3 mx-auto'>Hello, <br />My name Is <span className='text-sky-400'>Achraf</span>, a front-end ReactJs web developer, designer and content creator since 2021 from Morocco. I am also interested in A.I, Linux kernel and cryptocurrencies.</p>

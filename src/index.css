@@ -156,3 +156,32 @@ Fragment {
 .Progress {
   background-color: rgb(0, 79, 197);
 }
+
+@keyframes featuresAppearing {
+  0% {
+    transform: scaleY(0%) translateY(-100px);
+  }
+  /* 10% {
+    transform: scaleY(50%) translateY(-50px);
+  } */
+  100% {
+    transform: scaleY(100%) translateY(0px);
+  }
+  /* 80% {
+    transform: scaleY(100%) translateY(0px);
+  }
+  90% {
+    transform: scaleY(-50%) translateY(25px);
+    opacity: 100%;
+  }
+  100% {
+    transform: scaleY(0%) translateY(50px); 
+  } */
+}
+
+
+
+.featureApp {
+  animation: featuresAppearing;
+  animation-duration: 0.5s;
+}

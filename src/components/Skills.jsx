@@ -13,10 +13,23 @@ export default function Skills() {
 
   const features = ["create", "build", "design", "make", "spark"]
   let featureIndex = 0;
-  
+
+  // CHANGE FUNCTION
+
   setInterval((e) => {
     e?.preventDefault();
-    document.querySelector('.feature-text').innerHTML = features[featureIndex];
+    const featureText = document.querySelector('.feature-text');
+    featureText?.classList?.add('featureApp');
+
+
+    setTimeout((e) => {
+      e?.preventDefault();
+      featureText?.classList?.remove('featureApp');
+    }, 1500)
+
+
+
+    featureText.innerHTML = features[featureIndex];
     featureIndex++ ;
     if(featureIndex == 5) {
       featureIndex = 0;
@@ -36,9 +49,28 @@ export default function Skills() {
             )
           })}
         </section>
-        <section className='h-auto w-full py-10 px-5 sm:px-12 bg-sharp-glass'>
+        <section className='h-auto w-full py-10 px-4 sm:px-12 bg-sharp-glass'>
           {/* <h1 className='text-3xl sm:text-6xl font-bold text-slate-200'>Take your website design to the next level with me </h1> */}
-          <h1 className='text-3xl sm:text-6xl font-bold text-slate-200 mb-6'>Let's <span className='text-sky-400 relative w-28 feature-text'></span> your own website</h1>
+          <div className="w-full h-auto p-4 flex">
+            <h1 className='text-3xl sm:text-6xl font-bold text-slate-200 mb-6'>Let's</h1>
+            <span className='feature-text text-sky-400 text-3xl sm:text-6xl font-bold mx-2'></span>
+            <h1 className='text-3xl sm:text-6xl font-bold text-slate-200 mb-6'> your own website</h1>
+          </div>
+          
+          <ul className='list-none flex flex-wrap w-full h-auto justify-center'>
+            <div className="skilldesc w-2/3 sm:w-1/2 h-56 border-2 border-sky-600 mr-4 mb-6 bg-slate-700 rounded-3xl">
+
+            </div>
+            <div className="skilldesc w-2/3 sm:w-1/2 h-56 border-2 border-sky-600 mr-4 mb-6 bg-slate-700 rounded-3xl">
+
+            </div>
+            <div className="skilldesc w-2/3 sm:w-1/2 h-56 border-2 border-sky-600 mr-4 mb-6 bg-slate-700 rounded-3xl">
+
+            </div>
+            <div className="skilldesc w-2/3 sm:w-1/2 h-56 border-2 border-sky-600 mr-4 mb-6 bg-slate-700 rounded-3xl">
+
+            </div>
+          </ul>
           
         </section>
     </div>

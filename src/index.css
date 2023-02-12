@@ -185,3 +185,18 @@ Fragment {
   animation: featuresAppearing;
   animation-duration: 0.5s;
 }
+
+@keyframes UIFLOW {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+  
+}
+
+.myWebDesign {
+  animation: UIFLOW;
+  animation-duration: 0.7s;
+}

@@ -1,6 +1,12 @@
 import React from 'react'
 import ProgressBar from '../ProgressBar'
-
+import influencer from '../images/influencer.png'
+import coding from '../images/coding.png'
+import writing from '../images/writing.png'
+import vector from '../images/vector.png'
+import p1 from '../images/project-1.png'
+import p2 from '../images/project-2.png'
+import p3 from '../images/project-3.png'
 export default function Skills() {
 
   const skillsArray = [
@@ -39,7 +45,7 @@ export default function Skills() {
 
   return (
     <div className='w-full h-full'>
-        <section className='skills skill-container w-full h-screen pb-12 pt-24 px-3 flex flex-wrap justify-center'>
+        <section className='skills skill-container w-full h-auto sm:h-screen pb-12 pt-24 px-3 flex flex-wrap justify-center'>
           {skillsArray.map((e) => {
             return (
               <div className='relative w-48 lg:w-1/5 h-32 mx-2 my-4 px-5 pb-2 pt-3 rounded-xl bg-sharp-glass flex justify-center'>
@@ -49,7 +55,7 @@ export default function Skills() {
             )
           })}
         </section>
-        <section className='h-auto w-full py-10 px-4 sm:px-12 bg-sharp-glass'>
+        <section className='h-auto w-full py-10 px-4 sm:px-12 bg-sharp-glass border-t-8 border-b-8 border-slate-300'>
           {/* <h1 className='text-3xl sm:text-6xl font-bold text-slate-200'>Take your website design to the next level with me </h1> */}
           <div className="w-full h-auto p-4 flex">
             <h1 className='text-3xl sm:text-6xl font-bold text-slate-200 mb-6'>Let's</h1>
@@ -58,20 +64,42 @@ export default function Skills() {
           </div>
           
           <ul className='list-none flex flex-wrap w-full h-auto justify-center'>
-            <div className="skilldesc w-2/3 sm:w-1/2 h-56 border-2 border-sky-600 mr-4 mb-6 bg-slate-700 rounded-3xl">
 
-            </div>
-            <div className="skilldesc w-2/3 sm:w-1/2 h-56 border-2 border-sky-600 mr-4 mb-6 bg-slate-700 rounded-3xl">
-
-            </div>
-            <div className="skilldesc w-2/3 sm:w-1/2 h-56 border-2 border-sky-600 mr-4 mb-6 bg-slate-700 rounded-3xl">
-
-            </div>
-            <div className="skilldesc w-2/3 sm:w-1/2 h-56 border-2 border-sky-600 mr-4 mb-6 bg-slate-700 rounded-3xl">
-
-            </div>
+            <li className="skilldesc w-2/3 md:w-1/3 h-auto md:h-80 border-2 border-sky-600 mr-4 mb-6 bg-slate-700 rounded-3xl p-3">
+              <img src={coding} alt="" className='w-1/4 mx-auto mt-2 mb-2'  loading='lazy'/>
+              <h2 className='text-slate-200 text-2xl font-semibold text-center'>Web developer</h2>
+              <p className='text-slate-300'>As a web developer with over 2 years of experience, I have a passion for creating visually appealing and user-friendly websites that deliver an exceptional online experience to visitors. Using technologies like HTML, CSS, Tailwindcss, and ReactJs.</p>
+            </li>
+            <li className="skilldesc w-2/3 md:w-1/3 h-auto md:h-80 border-2 border-sky-600 mr-4 mb-6 bg-slate-700 rounded-3xl p-3">
+              <img src={vector} alt="" className='w-1/4 mx-auto mt-2 mb-2'  loading='lazy'/>
+              <h2 className='text-slate-200 text-2xl font-semibold text-center'>Web designer</h2>
+              <p className='text-slate-300'>I have a passion for creating visually stunning and aesthetically pleasing websites that engage and impress visitors. My expertise lies in the use of design tools such as Figma for creating website templates, and I have a track record of delivering high-quality design solutions that meet clients' needs and requirements.</p>
+            </li>
+            <li className="skilldesc w-2/3 md:w-1/3 h-auto md:h-80 border-2 border-sky-600 mr-4 mb-6 bg-slate-700 rounded-3xl p-3">
+              <img src={writing} alt="" className='w-1/4 mx-auto mt-2 mb-2'  loading='lazy'/>
+              <h2 className='text-slate-200 text-2xl font-semibold text-center'>Content writer</h2>
+              <p className='text-slate-300'>I am an content creator on instagram, I like to write and post my coding journey in form of Instagram reels and stories, I also write website content to optimize it for search engines and rank it higher to drive more website traffic</p>
+            </li>
+            <li className="skilldesc w-2/3 md:w-1/3 h-auto md:h-80 border-2 border-sky-600 mr-4 mb-6 bg-slate-700 rounded-3xl p-3">
+              <img src={influencer} alt="" className='w-1/4 mx-auto mt-2 mb-2'  loading='lazy'/>
+              <h2 className='text-slate-200 text-2xl font-semibold text-center'>Content creator</h2>
+              <p className='text-slate-300'>I am also an active content creator on instagram. Join a community of more than 120k people passionate about coding and programming. I'm sharing content about my coding journey, other people experiences, coding tips funny reels, and more. <a href="https://www.instagram.com/achrafcodes" className='font-bold'>@achrafcodes</a></p>
+            </li>
           </ul>
-          
+          <h1 className='text-2xl sm:text-5xl font-bold text-slate-200 mb-6'>I can build stunning Web interfaces within smart web applications.</h1>
+        </section>
+        <section className='skills w-full h-auto pb-12 pt-24 px-7'>
+          <ul className='relative block w-full h-auto py-10 px-5 list-none '>
+            <li className="skilldesc w-full md:w-2/3 h-auto border-2 border-sky-600 mb-6 rounded-md p-1 myWebDesign">
+              <img src={p1} alt="" loading="lazy"></img>
+            </li>
+            <li className="skilldesc w-full md:w-2/3 h-auto border-2 border-sky-600 mb-6 rounded-md p-1 myWebDesign">
+            <img src={p2} alt="" loading="lazy"></img>
+            </li>
+            <li className="skilldesc w-full md:w-2/3 h-auto border-2 border-sky-600 rounded-md p-1 myWebDesign">
+            <img src={p3} alt="" loading="lazy"></img>
+            </li>
+          </ul>
         </section>
     </div>
   )

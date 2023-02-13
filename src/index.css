@@ -138,9 +138,23 @@ Fragment {
   z-index: 0;
 }
 
+.profilePic{
+  animation: BotApp;
+  animation-duration: 0.7s;
+}
+
 @media screen and (max-width:500px) {
   .circle {
     clip-path: circle(28% at 45% 77%); 
+  }
+}
+
+@keyframes BotApp {
+  from {
+    transform: translateY(-100%);
+  }
+  to {
+    transform: translateY(0);
   }
 }
 
@@ -189,9 +203,11 @@ Fragment {
 @keyframes UIFLOW {
   from {
     transform: translateX(100%);
+    opacity: 0;
   }
   to {
     transform: translateX(0);
+    opacity: 100%;
   }
   
 }

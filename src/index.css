@@ -216,3 +216,21 @@ Fragment {
   animation: UIFLOW;
   animation-duration: 0.7s;
 }
+
+/* CONTACT */
+
+@keyframes pAppearing {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: none;
+    opacity: 100%;
+  }
+}
+
+.pApp {
+  animation: pAppearing;
+  animation-duration: 0.9s;
+}

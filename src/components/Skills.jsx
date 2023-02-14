@@ -87,7 +87,6 @@ export default function Skills() {
           </div>
           
           <ul className='list-none flex flex-wrap w-full h-auto justify-center'>
-
             <li className="skilldesc w-2/3 md:w-[45%] h-auto md:h-80 border-2 border-sky-600 mr-4 mb-6 bg-slate-700 rounded-3xl p-3">
               <img src={coding} alt="" className='w-1/4 mx-auto mt-2 mb-2'  loading='lazy'/>
               <h2 className='text-slate-200 text-2xl font-semibold text-center'>Web developer</h2>
@@ -112,7 +111,7 @@ export default function Skills() {
           <h1 className='text-2xl sm:text-5xl font-bold text-slate-200 mb-6'>I can build stunning Web interfaces within smart web applications.</h1>
         </section>
         <section className='skills w-full h-auto pb-12 pt-24 px-7' >
-          <ul className='relative block w-full h-auto py-10 px-5 list-none ' ref={ref}>
+          <ul className='relative block w-full h-auto pb-10 pt-7 px-5 list-none ' ref={ref}>
           {inView && triggerDesign()}
             <li className={`skilldes w-full md:w-2/3 h-auto border-2 border-sky-600 mb-6 rounded-md p-1`}>
               <img src={p1} alt="" loading="lazy"></img>

@@ -23,7 +23,7 @@ function Navbar() {
                     <Link to="skills" className='text-slate-200 font-medium md:text-lg md:font-semibold'>Skills</Link>
                 </li>
                 <li>
-                    <Link to="contact" className='text-slate-200 font-medium md:text-lg md:font-semibold'>Contact me</Link>
+                    <Link to="contact-me" className='text-slate-200 font-medium md:text-lg md:font-semibold'>Contact me</Link>
                 </li>
             </ul>
         </nav>
@@ -37,7 +37,7 @@ function Navbar() {
                     <Link to="skills" className='text-slate-200 font-medium md:text-lg md:font-semibold'>Skills</Link>
                 </li>
                 <li>
-                    <Link to="contact" className='text-slate-200 font-medium md:text-lg md:font-semibold'>Contact me</Link>
+                    <Link to="contact-me" className='text-slate-200 font-medium md:text-lg md:font-semibold'>Contact me</Link>
                 </li>
             </ul>
         </nav>

@@ -1,4 +1,5 @@
 import React, { useRef } from 'react';
+import { useNavigate } from 'react-router';
 import { useInView } from 'react-intersection-observer';
 import mail from '../images/mail.png';
 import phone from '../images/phone.png';
@@ -11,6 +12,8 @@ export default function Contact() {
   const [ ref, Viewed ] = useInView({
     triggerOnce: true
   });
+
+  const navigate = useNavigate();
 
   function triggerParagraph() {
     const parag = document.querySelector('.parag');
@@ -36,16 +39,17 @@ export default function Contact() {
           </li>
         </ul>
       </section>
-      <section className='w-full h-auto bg-sharp-glass px-4 sm:px-8'>
+      <section className='w-full h-auto bg-sharp-glass px-4 sm:px-8 pb-16'>
         <div className='parag w-full h-auto py-5 opacity-0'>
           <p className='text-3xl sm:text-6xl my-10 font-bold text-slate-200 mx-auto'>Hey, let's chat! Drop me a message or call and let's get your website up and running</p>
-          <ul className='list-none flex w-3/4 h-28 justify-between m-auto' ref={ref}>
+          <ul className='list-none flex w-full px-5 sm:w-3/4 h-28 justify-between m-auto' ref={ref}>
             <a href="https://www.instagram.com/achrafcodes" target="_blank" className='sm-icon bg-slate-900 h-3/4 p-4 rounded-full'><img src={instagram} loading="lazy" alt="" className='h-full'/></a>
             <a href="" target="_blank" className='sm-icon bg-slate-900 h-3/4 p-4 rounded-full'><img src={linkedin} loading="lazy" alt="" className='h-full'/></a>
             <a href="https://github.com/Achrafcodes" target="_blank" className='sm-icon bg-slate-900 h-3/4 p-4 rounded-full'><img src={github} loading="lazy" alt="" className='h-full'/></a>
           {Viewed && triggerParagraph()}
           </ul>
         </div>
+        <button className='CTC relative w-auto bg-sky-500 p-2 rounded-full text-slate-200 font-bold text-2xl -bottom-6  md:text-3xl lg:text-4xl ml-auto' onClick={() => {navigate("/")}}>Go back home</button>
       </section>
     </div>
   )

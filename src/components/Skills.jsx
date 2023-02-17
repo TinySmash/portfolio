@@ -1,7 +1,7 @@
-import React, { useRef } from 'react';
+import React, { useRef, useEffect } from 'react';
 import { useNavigate } from 'react-router';
 import { useInView } from 'react-intersection-observer';
-import ProgressBar from '../ProgressBar'
+import ProgressBar from './ProgressBar'
 import influencer from '../images/influencer.png'
 import coding from '../images/coding.png'
 import writing from '../images/writing.png'
@@ -30,25 +30,47 @@ export default function Skills() {
 
   // CHANGE FUNCTION
 
-  setInterval((e) => {
+  const changeFeaturesText = setInterval((e) => {
     e?.preventDefault();
     const featureText = document.querySelector('.feature-text');
-    featureText?.classList?.add('featureApp');
+    if (featureText == undefined ) {
 
+      clearInterval(changeFeaturesText);
 
-    setTimeout((e) => {
-      e?.preventDefault();
-      featureText?.classList?.remove('featureApp');
-    }, 1500)
+    } else {
+      
+      featureText?.classList?.add('featureApp');
+      setTimeout((e) => {
+        e?.preventDefault();
+        featureText?.classList?.remove('featureApp');
+      }, 1500)
+  
+      featureText.innerHTML = features[featureIndex];
+      featureIndex++ ;
+      if(featureIndex == 5) {
+        featureIndex = 0;
+      }
 
-
-
-    featureText.innerHTML = features[featureIndex];
-    featureIndex++ ;
-    if(featureIndex == 5) {
-      featureIndex = 0;
     }
-  }, 2000)
+
+
+  }, 3000)
+
+  // useEffect(() => {
+  //   window.addEventListener('beforeunload', getBackHome);
+  //   return () => {
+  //     window.removeEventListener('beforeunload', getBackHome);
+  //   };
+  // }, []);
+
+  // const getBackHome = () => {
+  //   clearInterval(changeFeaturesText);
+  //   clearInterval(ProgressBar?.createProgress);
+  //   setTimeout(() => {
+  //     navigate("/");
+  //   }, 1000);
+  // }
+  
 
 
   // APPEARING DESIGNS
@@ -73,7 +95,7 @@ export default function Skills() {
             return (
               <div className='relative w-48 lg:w-1/5 h-32 mx-2 my-4 px-5 pb-2 pt-3 rounded-xl bg-sharp-glass flex justify-center'>
                   <h1 className='text-slate-200 text-2xl font-semibold'>{e.name}</h1>
-                  <ProgressBar percentage={e.percentage} id={e.id}/>
+                  <ProgressBar percentage={e.percentage} id={e.id} key={e.id}/>
               </div>
             )
           })}
@@ -86,7 +108,7 @@ export default function Skills() {
             <h1 className='text-3xl sm:text-6xl font-bold text-slate-200 mb-6'> your own website</h1>
           </div>
           
-          <ul className='list-none flex flex-wrap w-full h-auto justify-center'>
+          <ul className='list-none flex flex-wrap w-full h-auto justify-center'> 
             <li className="skilldesc w-2/3 md:w-[45%] h-auto md:h-80 border-2 border-sky-600 mr-4 mb-6 bg-slate-700 rounded-3xl p-3">
               <img src={coding} alt="" className='w-1/4 mx-auto mt-2 mb-2'  loading='lazy'/>
               <h2 className='text-slate-200 text-2xl font-semibold text-center'>Web developer</h2>

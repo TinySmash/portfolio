@@ -31,13 +31,13 @@ function Navbar() {
         <nav className='mobile-menu w-4/5 px-6 fixed hidden md:hidden top-16'>
             <ul className='w-full flex justify-between'>
                 <li>
-                    <Link to="about" className='text-slate-200 font-medium md:text-lg md:font-semibold'>About</Link>
+                    <Link to="about" className='text-slate-200 text-lg font-semibold'>About</Link>
                 </li>
                 <li>
-                    <Link to="skills" className='text-slate-200 font-medium md:text-lg md:font-semibold'>Skills</Link>
+                    <Link to="skills" className='text-slate-200 text-lg font-semibold'>Skills</Link>
                 </li>
                 <li>
-                    <Link to="contact-me" className='text-slate-200 font-medium md:text-lg md:font-semibold'>Contact me</Link>
+                    <Link to="contact-me" className='text-slate-200 text-lg font-semibold'>Contact me</Link>
                 </li>
             </ul>
         </nav>

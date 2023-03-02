@@ -25,17 +25,18 @@ export default function Skills() {
     {name : "ReactJs & Redux", percentage: 80, id: 5},
   ]
 
-  const features = ["create", "build", "design", "make", "spark"]
   let featureIndex = 0;
-
+  
   // CHANGE FUNCTION
-
+  
   const changeFeaturesText = setInterval((e) => {
+    const features = ["create", "build", "design", "make", "spark"]
     e?.preventDefault();
     const featureText = document.querySelector('.feature-text');
     if (featureText == undefined ) {
 
       clearInterval(changeFeaturesText);
+      featureIndex = 0
 
     } else {
       

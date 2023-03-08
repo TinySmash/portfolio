@@ -28,51 +28,37 @@ export default function Skills() {
   let featureIndex = 0;
   
   // CHANGE FUNCTION
-  
-  const changeFeaturesText = setInterval((e) => {
-    const features = ["create", "build", "design", "make", "spark"]
-    e?.preventDefault();
-    const featureText = document.querySelector('.feature-text');
-    if (featureText == undefined ) {
 
-      clearInterval(changeFeaturesText);
-      featureIndex = 0
-
-    } else {
-      
-      featureText?.classList?.add('featureApp');
-      setTimeout((e) => {
-        e?.preventDefault();
-        featureText?.classList?.remove('featureApp');
-      }, 1500)
+  useEffect(() => {
+    const changeFeaturesText = setInterval((e) => {
+      const features = ["create", "build", "design", "make", "spark"]
+      e?.preventDefault();
+      const featureText = document.querySelector('.feature-text');
+      if (featureText == undefined ) {
   
-      featureText.innerHTML = features[featureIndex];
-      featureIndex++ ;
-      if(featureIndex == 5) {
-        featureIndex = 0;
+        clearInterval(changeFeaturesText);
+        featureIndex = 0
+  
+      } else {
+        
+        featureText?.classList?.add('featureApp');
+        setTimeout((e) => {
+          e?.preventDefault();
+          featureText?.classList?.remove('featureApp');
+        }, 1500)
+    
+        featureText.innerHTML = features[featureIndex];
+        featureIndex++ ;
+        if(featureIndex == 5) {
+          featureIndex = 0;
+        }
+  
       }
+      return () => clearInterval(changeFeaturesText)
+    }, 3000)
 
-    }
-
-
-  }, 3000)
-
-  // useEffect(() => {
-  //   window.addEventListener('beforeunload', getBackHome);
-  //   return () => {
-  //     window.removeEventListener('beforeunload', getBackHome);
-  //   };
-  // }, []);
-
-  // const getBackHome = () => {
-  //   clearInterval(changeFeaturesText);
-  //   clearInterval(ProgressBar?.createProgress);
-  //   setTimeout(() => {
-  //     navigate("/");
-  //   }, 1000);
-  // }
+  }, [])
   
-
 
   // APPEARING DESIGNS
 
@@ -82,16 +68,18 @@ export default function Skills() {
 
   const triggerDesign = () => {
     const designs = document.querySelectorAll('.skilldes');
-    designs.forEach((e) => {
+    Array.from(designs).map((e) => {
       e?.classList?.add('myWebDesign');
-    })
-  }
+    });
+  };
+  
 
 
   return (
     <div className='w-full h-full'>
-        <section className='skills skill-container w-full h-auto sm:h-screen pb-12 pt-24 px-3 flex flex-wrap justify-center'>
-          <h1 className='text-3xl sm:text-6xl font-bold text-slate-200 mb-6'>These are my main technologies & skills</h1>
+        <section className='skills skill-container w-full h-auto sm:h-screen pb-12 pt-24 px-3 text-center'>
+          <h1 className='text-4xl sm:text-6xl font-bold text-slate-200 mb-6'>Proficient in :</h1>
+          <div className="w-full h-auto flex flex-wrap justify-center">
           {skillsArray.map((e) => {
             return (
               <div className='relative w-48 lg:w-1/5 h-32 mx-2 my-4 px-5 pb-2 pt-3 rounded-xl bg-sharp-glass flex justify-center'>
@@ -100,6 +88,7 @@ export default function Skills() {
               </div>
             )
           })}
+          </div>
         </section>
         <section className='h-auto w-full py-10 px-4 sm:px-12 bg-sharp-glass border-t-8 border-b-8 border-slate-300'>
           {/* <h1 className='text-3xl sm:text-6xl font-bold text-slate-200'>Take your website design to the next level with me </h1> */}
@@ -131,7 +120,7 @@ export default function Skills() {
               <p className='text-slate-300'>I am also an active content creator on instagram. Join a community of more than 120k people passionate about coding and programming. I'm sharing content about my coding journey, other people experiences, coding tips funny reels, and more. <a href="https://www.instagram.com/achrafcodes" className='font-bold'>@achrafcodes</a></p>
             </li>
           </ul>
-          <h1 className='text-2xl sm:text-5xl font-bold text-slate-200 mb-6'>I can build stunning Web interfaces within smart web applications.</h1>
+          <h1 className='text-2xl sm:text-5xl font-bold text-slate-200 mb-6'>Building stunning Web interfaces within smart web applications...</h1>
         </section>
         <section className='skills w-full h-auto pb-12 pt-24 px-7' >
           <ul className='relative block w-full h-auto pb-10 pt-7 px-5 list-none ' ref={ref}>
@@ -146,13 +135,13 @@ export default function Skills() {
             <img src={p3} alt="" loading="lazy"></img>
             </li>
           </ul>
-          <div className='block md:flex w-full h-auto items-center'>
-            <h1 className='text-3xl sm:text-6xl font-bold text-slate-200 mb-6'>Want more ? check my GitHub profile.</h1>
-            <div className='sm-icon bg-slate-900 w-fit p-4 rounded-full m-auto'>
+          {/* <button className='CTC relative w-auto bg-sky-500 p-2 rounded-full text-slate-200 font-bold text-2xl -bottom-6  md:text-3xl lg:text-4xl ml-auto' onClick={() => {navigate("/")}}>Go back home</button> */}
+          <div className='block md:flex w-full h-auto items-center mt-10'>
+            <h1 className='text-4xl md:text-5xl lg:text-6xl font-bold text-slate-200 mb-6'>View more projects on <a href="https://github.com/Achrafcodes" className='underline underline-offset-4 font-extrabold'>Github</a></h1>
+            {/* <div className='sm-icon bg-slate-900 w-fit p-4 rounded-full m-auto'>
               <a href="https://github.com/Achrafcodes" target="_blank" ><img src={github} loading="lazy" alt="" className='w-24'></img></a>
-            </div>
+            </div> */}
           </div>
-          <button className='CTC relative w-auto bg-sky-500 p-2 rounded-full text-slate-200 font-bold text-2xl -bottom-6  md:text-3xl lg:text-4xl ml-auto' onClick={() => {navigate("/")}}>Go back home</button>
         </section>
     </div>
   )

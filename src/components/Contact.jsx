@@ -49,7 +49,6 @@ export default function Contact() {
           {Viewed && triggerParagraph()}
           </ul>
         </div>
-        <button className='CTC relative w-auto bg-sky-500 p-2 rounded-full text-slate-200 font-bold text-2xl -bottom-6  md:text-3xl lg:text-4xl ml-auto' onClick={() => {navigate("/")}}>Go back home</button>
       </section>
     </div>
   )

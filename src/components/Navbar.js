@@ -44,7 +44,7 @@ function Navbar() {
                 </li>
             </ul>
         </nav>
-        <button className='CTC text-md sm:text-lg md:text-2xl font-semibold text-slate-200 bg-sky-500 py-1 px-3 sm:px-5 md:px-7 rounded-full'>Let's work</button>
+        <button className='CTC text-md sm:text-lg md:text-2xl font-semibold text-slate-200 bg-sky-500 py-1 px-3 sm:px-5 md:px-7 rounded-full' onClick={() =>  navigate('/lets-work') }>Let's work</button>
     </header>
   )
 }

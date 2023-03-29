@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import avatar from '../images/achraf.png';
 import facebook from '../images/facebook.png';
 import instagram from '../images/instagram.png';
@@ -7,70 +7,79 @@ import github from '../images/github.png'
 
 function Hero() {
 
-  const heroTitle = ['Hello, I am ', 'Achraf']
-  let titleCount = 0
-  let titlePart = 0
+  useEffect(() => {
 
-  setTimeout(() => {
-    const typingEffect = setInterval(() => {
-      let title = document.querySelector('.title');
-      let Name = document.querySelector('.nameTitle')
-      if(title == undefined || Name == undefined) {
-        clearInterval(typingEffect)
-        titleCount = titlePart = 0
-      }
-      if ( titleCount < heroTitle[titlePart].length && titlePart == 0 ) {
-        titleCount++
-        title.innerHTML =  heroTitle[titlePart]?.slice(0,titleCount) + "<span class='nameTitle text-sky-500'></span>" 
-      } else if ( titleCount >= heroTitle[titlePart].length && titlePart == 0 ) {
-        titlePart++
-        titleCount = 0
-      }
-      else if (titleCount <= heroTitle[titlePart].length && titlePart == 1) {
-        Name.innerHTML += heroTitle[titlePart]?.charAt(titleCount)
-        Name.innerHTML =  heroTitle[titlePart]?.slice(0,titleCount)
-        titleCount++
-      }
-      else if (titleCount > heroTitle[titlePart].length && titlePart == 1) {
-        clearInterval(typingEffect)
-        title.classList.remove('static-typing-border')
-        title.classList.add('typing-border')
-      }
-    }, 200);
+    const heroTitle = ['Hello, I am ', 'Achraf']
+    let titleCount = 0
+    let titlePart = 0
 
-    // tamara 
+    setTimeout(() => {
+      const typingEffect = setInterval(() => {
+        let title = document.querySelector('.title');
+        let Name = document.querySelector('.nameTitle')
+        if(title == undefined || Name == undefined) {
+          clearInterval(typingEffect)
+          clearInterval(changePText);
+        }
+        else {
 
-    let pIndex = 0;
-    
-    const changePText = setInterval((e) => {
-      e?.preventDefault();
-      const Ps = ["Front end developer","UI designer"]
-      const pText = document.querySelector('.pText');
-      if (pText == undefined ) {
+          if ( titleCount < heroTitle[titlePart].length && titlePart == 0 ) {
+            titleCount++
+            title.innerHTML =  heroTitle[titlePart]?.slice(0,titleCount) + "<span class='nameTitle text-sky-500'></span>"
+          } else if ( titleCount >= heroTitle[titlePart].length && titlePart == 0 ) {
+            titlePart++
+            titleCount = 0
+          }
+          else if (titleCount <= heroTitle[titlePart].length && titlePart == 1) {
+            Name.innerHTML += heroTitle[titlePart]?.charAt(titleCount)
+            Name.innerHTML =  heroTitle[titlePart]?.slice(0,titleCount)
+            titleCount++
+          }
+          else if (titleCount > heroTitle[titlePart].length && titlePart == 1) {
+            clearInterval(typingEffect)
+            title.classList.remove('static-typing-border')
+            title.classList.add('typing-border')
+          }
 
-        clearInterval(changePText);
-        pIndex = 0
+        }
+      }, 200);
 
-      } else {
-        
-        pText?.classList?.add('featureApp');
-        setTimeout((e) => {
-          e?.preventDefault();
-          pText?.classList?.remove('featureApp');
-        }, 1500)
-    
-        pText.innerHTML = Ps[pIndex];
-        pIndex++ ;
-        if(pIndex == 2) {
-          pIndex = 0;
+      // tamara
+
+      let pIndex = 0;
+
+      const changePText = setInterval((e) => {
+        e?.preventDefault();
+        const Ps = ["Front end developer","UI designer"]
+        const pText = document.querySelector('.pText');
+        if ( document.querySelector('.pText') == undefined ) {
+
+          clearInterval(changePText);
+          pIndex = 0
+
+        } else {
+
+          pText?.classList?.add('featureApp');
+          setTimeout((e) => {
+            e?.preventDefault();
+            pText?.classList?.remove('featureApp');
+          }, 1500)
+
+          pText.innerHTML = Ps[pIndex];
+          pIndex++ ;
+          if(pIndex == 2) {
+            pIndex = 0;
+          }
+
         }
 
-      }
 
+      }, 4000)
 
-    }, 4000)
+    }, 1000)
 
-  }, 1000)
+  }, [])
+
 
 
 

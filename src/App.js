@@ -8,6 +8,7 @@ import Loading from './components/Loading ';
 const About = lazy(() => import('./components/About'));
 const Skills = lazy(() => import('./components/Skills'));
 const Contact = lazy(() => import('./components/Contact'))
+const LetsWork = lazy(() => import('./components/LetsWork'))
 
 function App() {
   return (
@@ -20,6 +21,8 @@ function App() {
             <Route exact path='/about' element={<About/>}></Route>
             <Route exact path='/skills' element={<Skills/>}></Route>
             <Route exact path='/contact-me' element={<Contact/>}></Route>
+            <Route exact path='/lets-work' element={<LetsWork/>}></Route>
+
           </Routes>
         </Suspense>
       </React.Fragment>

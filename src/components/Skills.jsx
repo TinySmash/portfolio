@@ -6,7 +6,6 @@ import influencer from '../images/influencer.png'
 import coding from '../images/coding.png'
 import writing from '../images/writing.png'
 import vector from '../images/vector.png'
-import github from '../images/github.png';
 import p1 from '../images/project-1.png'
 import p2 from '../images/project-2.png'
 import p3 from '../images/project-3.png'
@@ -26,39 +25,39 @@ export default function Skills() {
   ]
 
   let featureIndex = 0;
-  
+
   // CHANGE FUNCTION
+  const featureText = useRef('')
 
   useEffect(() => {
     const changeFeaturesText = setInterval((e) => {
       const features = ["create", "build", "design", "make", "spark"]
       e?.preventDefault();
-      const featureText = document.querySelector('.feature-text');
-      if (featureText == undefined ) {
-  
+      if (featureText.current == undefined ) {
+
         clearInterval(changeFeaturesText);
         featureIndex = 0
-  
+
       } else {
-        
-        featureText?.classList?.add('featureApp');
+
+        featureText.current.classList.add('featureApp');
         setTimeout((e) => {
           e?.preventDefault();
-          featureText?.classList?.remove('featureApp');
+          featureText.current?.classList?.remove('featureApp');
         }, 1500)
-    
-        featureText.innerHTML = features[featureIndex];
+
+        featureText.current.innerHTML = features[featureIndex];
         featureIndex++ ;
         if(featureIndex == 5) {
           featureIndex = 0;
         }
-  
+
       }
       return () => clearInterval(changeFeaturesText)
     }, 3000)
 
   }, [])
-  
+
 
   // APPEARING DESIGNS
 
@@ -72,7 +71,7 @@ export default function Skills() {
       e?.classList?.add('myWebDesign');
     });
   };
-  
+
 
 
   return (
@@ -94,11 +93,11 @@ export default function Skills() {
           {/* <h1 className='text-3xl sm:text-6xl font-bold text-slate-200'>Take your website design to the next level with me </h1> */}
           <div className="w-full h-auto p-4 flex">
             <h1 className='text-3xl sm:text-6xl font-bold text-slate-200 mb-6'>Let's</h1>
-            <span className='feature-text text-sky-400 text-3xl sm:text-6xl font-bold mx-2'></span>
+            <span className='feature-text text-sky-400 text-3xl sm:text-6xl font-bold mx-2' ref={featureText}></span>
             <h1 className='text-3xl sm:text-6xl font-bold text-slate-200 mb-6'> your own website</h1>
           </div>
-          
-          <ul className='list-none flex flex-wrap w-full h-auto justify-center'> 
+
+          <ul className='list-none flex flex-wrap w-full h-auto justify-center'>
             <li className="skilldesc w-2/3 md:w-[45%] h-auto md:h-80 border-2 border-sky-600 mr-4 mb-6 bg-slate-700 rounded-3xl p-3">
               <img src={coding} alt="" className='w-1/4 mx-auto mt-2 mb-2'  loading='lazy'/>
               <h2 className='text-slate-200 text-2xl font-semibold text-center'>Web developer</h2>

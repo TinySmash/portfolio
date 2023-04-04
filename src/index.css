@@ -2,12 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap');
+
 * {
   font-family: Poppins, sans-serif;
   margin: 0;
   padding: 0;
 }
-
 
 body {
   margin: 0;
@@ -35,9 +36,7 @@ Fragment {
   background: linear-gradient(-45deg, #4b749f, #243748);
 }
 
-
 /*NAVBAR*/
-
 
 .menu {
   background-image: url(../public/menu.png);
@@ -45,17 +44,13 @@ Fragment {
   background-position: center;
 }
 
-.CTC:hover{
+.CTC:hover {
   /* --tw-shadow-color: #0ea5e9; */
-  box-shadow: -0 0 5px  #0ea5e9,
-  0 0 10px  #0ea5e9,
-  0 0 15px  #0ea5e9,
-  0 0 20px
+  box-shadow: -0 0 5px #0ea5e9, 0 0 10px #0ea5e9, 0 0 15px #0ea5e9, 0 0 20px;
 }
 
 .CTC {
-  box-shadow: 0 0 5px  #0ea5e9,
-  0 0 10px #0ea5e9;
+  box-shadow: 0 0 5px #0ea5e9, 0 0 10px #0ea5e9;
 }
 
 .mobile-menu {
@@ -64,50 +59,44 @@ Fragment {
   animation: mobileMenu;
   animation-duration: 0.7s;
 }
- @keyframes mobileMenu {
+@keyframes mobileMenu {
   from {
     opacity: 0;
   }
   to {
     opacity: 100%;
   }
- }
+}
 
- /* HERO */
+/* HERO */
 
- @keyframes socialMediaIcon {
+@keyframes socialMediaIcon {
   from {
     transform: translateY(0);
     box-shadow: none;
   }
   to {
     transform: translateY(-12px);
-    box-shadow: -0 0 5px  #a3a3a3,
-    0 0 25px  #a3a3a3,
-    0 0 50px  #a3a3a3,
-    0 0 100px;
+    box-shadow: -0 0 5px #a3a3a3, 0 0 25px #a3a3a3, 0 0 50px #a3a3a3, 0 0 100px;
   }
- }
+}
 
-.sm-icon:hover{
+.sm-icon:hover {
   animation: socialMediaIcon;
   animation-duration: 0.7s;
   transform: translateY(-12px);
-    box-shadow: -0 0 5px  #a3a3a3,
-    0 0 25px  #a3a3a3,
-    0 0 50px  #a3a3a3,
-    0 0 100px;
+  box-shadow: -0 0 5px #a3a3a3, 0 0 25px #a3a3a3, 0 0 50px #a3a3a3, 0 0 100px;
 }
- .Hero {
-  background-image: url("./images/1414.png");
+.Hero {
+  background-image: url('./images/1414.png');
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
- }
+}
 
- /* HERO */
+/* HERO */
 
- @keyframes aboutTitle {
+@keyframes aboutTitle {
   from {
     transform: translateX(-100px);
   }
@@ -115,56 +104,57 @@ Fragment {
     transform: translateX(0);
     z-index: 999;
   }
- }
+}
 
- @keyframes typing {
+@keyframes typing {
   0% {
     border-right: none;
   }
   100% {
     border-right: 3px solid rgb(226 232 240);
   }
- }
+}
 
- .static-typing-border {
+.static-typing-border {
   border-right: 3px solid rgb(226 232 240);
- }
+}
 
- .typing-border {
+.typing-border {
   animation: typing;
-  animation-duration:1s;
+  animation-duration: 1s;
   animation-iteration-count: infinite;
- }
+}
 
- /* ABOUT */
+/* ABOUT */
 
- .about-title , .description{
+.about-title,
+.description {
   animation: aboutTitle;
   animation-duration: 0.7s;
   z-index: 999;
- }
+}
 
- .description {
+.description {
   z-index: 999;
   position: relative;
- }
+}
 
 .circle {
   /* opacity: .8; */
   top: 20%;
   left: 40%;
-  clip-path: circle(50% at 57% 85%); 
+  clip-path: circle(50% at 57% 85%);
   z-index: 0;
 }
 
-.profilePic{
+.profilePic {
   animation: BotApp;
   animation-duration: 0.7s;
 }
 
-@media screen and (max-width:500px) {
+@media screen and (max-width: 500px) {
   .circle {
-    clip-path: circle(28% at 45% 77%); 
+    clip-path: circle(28% at 45% 77%);
   }
 }
 
@@ -180,7 +170,7 @@ Fragment {
 /* SKILLS */
 
 .skills {
-  background-image: url("./images/1414.png");
+  background-image: url('./images/1414.png');
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -208,11 +198,9 @@ Fragment {
     opacity: 100%;
   }
   100% {
-    transform: scaleY(0%) translateY(50px); 
+    transform: scaleY(0%) translateY(50px);
   } */
 }
-
-
 
 .featureApp {
   animation: featuresAppearing;
@@ -228,7 +216,6 @@ Fragment {
     transform: translateX(0);
     opacity: 100%;
   }
-  
 }
 
 .myWebDesign {
@@ -253,8 +240,6 @@ Fragment {
   animation: pAppearing;
   animation-duration: 0.9s;
 }
-
-
 
 /* LOADING ANIMATION */
 
@@ -283,16 +268,12 @@ Fragment {
   height: 100%;
   background-color: #38bdf8;
   clip-path: circle(50%);
-  box-shadow: 0 0 5px  #0ea5e9,
-  0 0 10px #0ea5e9;
+  box-shadow: 0 0 5px #0ea5e9, 0 0 10px #0ea5e9;
 }
 
 .shadowing {
   position: relative;
-  box-shadow: -0 0 5px  #0ea5e9,
-  0 0 25px  #0ea5e9,
-  0 0 50px  #0ea5e9,
-  0 0 100px;
+  box-shadow: -0 0 5px #0ea5e9, 0 0 25px #0ea5e9, 0 0 50px #0ea5e9, 0 0 100px;
   display: inline-block;
   border-radius: 9999px;
   left: 0%;
@@ -303,18 +284,54 @@ Fragment {
 
 @keyframes Rotation {
   25% {
-      transform: rotate(25deg);
+    transform: rotate(25deg);
   }
   75% {
-      transform: rotate(-25deg);
+    transform: rotate(-25deg);
   }
 }
 
 @keyframes upAndDown {
-  50%{
-      left: 86%;
+  50% {
+    left: 86%;
   }
   100% {
-      left: 0;
+    left: 0;
+  }
+}
+
+/* LET'S WORK */
+
+@keyframes offAppMobile {
+  from {
+    opacity: 0%;
+    transform: translateX(100%);
+  }
+  to {
+    opacity: 100%;
+    transform: translateX(0);
+  }
+}
+
+@keyframes offApp {
+  from {
+    opacity: 0%;
+    transform: translateY(100%);
+  }
+  to {
+    opacity: 100%;
+    transform: translateY(0);
+  }
+}
+
+.off-app {
+  animation: offAppMobile;
+  animation-duration: 1s;
+}
+
+@media screen and (min-width: 768px) {
+  .off-app {
+    animation: offApp;
+    animation-duration: 1s;
   }
 }

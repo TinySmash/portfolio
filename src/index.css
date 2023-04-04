@@ -335,3 +335,23 @@ Fragment {
     animation-duration: 1s;
   }
 }
+
+.circles::before {
+  content: '';
+  z-index: 0;
+  width: 50%;
+  height: 50vw;
+  position: absolute;
+  background-size: cover;
+  background-image: url('./images/circles.png');
+  opacity: 0.2;
+  right: 0;
+  top: 0;
+}
+
+@media screen and (max-width: 768px) {
+  .circles::before {
+    width: 75%;
+    height: 75vw;
+  }
+}

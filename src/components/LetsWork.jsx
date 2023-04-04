@@ -5,16 +5,16 @@ import webapp from '../images/webapp.png';
 
 export default function LetsWork() {
   return (
-    <div className="w-full h-auto min-h-screen bg-sharp-glass absolute p-4">
-      <section className="w-full h-auto min-h-screen relative p-2">
-        <h1 className="mt-16 text-center relative text-slate-200 text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold">
+    <div className="w-full h-auto min-h-screen bg-sharp-glass absolute">
+      <section className="w-full h-auto min-h-screen relative p-2 circles">
+        <h1 className="mt-20 text-center relative text-slate-200 text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold">
           Building Beautiful Websites - Let's Do This!
         </h1>
         <h2 className="mt-5 text-center relative text-slate-200 text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold">
           I can build
         </h2>
-        <ul className="list-none flex flex-wrap w-full h-auto justify-center mt-5 off-app mb-28">
-          <li className="skilldesc w-2/3 md:w-[30%] h-auto border-2 border-sky-600 mr-4 mb-6 bg-slate-700 rounded-3xl p-3">
+        <ul className="list-none flex flex-wrap w-full h-auto justify-center mt-5 off-app mb-28 z-50">
+          <li className="skilldesc w-2/3 md:w-[30%] h-auto border-2 border-sky-600 mr-4 mb-6 bg-slate-700 rounded-3xl p-3 z-50">
             <img
               src={lp}
               alt=""
@@ -25,7 +25,7 @@ export default function LetsWork() {
               Landing pages
             </h2>
           </li>
-          <li className="skilldesc w-2/3 md:w-[30%] h-auto border-2 border-sky-600 mr-4 mb-6 bg-slate-700 rounded-3xl p-3">
+          <li className="skilldesc w-2/3 md:w-[30%] h-auto border-2 border-sky-600 mr-4 mb-6 bg-slate-700 rounded-3xl p-3 z-50">
             <img
               src={websites}
               alt=""
@@ -36,7 +36,7 @@ export default function LetsWork() {
               Websites
             </h2>
           </li>
-          <li className="skilldesc w-2/3 md:w-[30%] h-auto border-2 border-sky-600 mr-4 mb-6 bg-slate-700 rounded-3xl p-3">
+          <li className="skilldesc w-2/3 md:w-[30%] h-auto border-2 border-sky-600 mr-4 mb-6 bg-slate-700 rounded-3xl p-3 z-50">
             <img
               src={webapp}
               alt=""

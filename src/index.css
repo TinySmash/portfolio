@@ -36,7 +36,7 @@ Fragment {
   background: linear-gradient(-45deg, #4b749f, #243748);
 }
 
-/*NAVBAR*/
+/* NAVBAR */
 
 .menu {
   background-image: url(../public/menu.png);
@@ -66,6 +66,36 @@ Fragment {
   to {
     opacity: 100%;
   }
+}
+
+@keyframes changeBgColorToSlate {
+  from {
+    background-color: transparent;
+  }
+  to {
+    background-color: rgba(51, 65, 85, 0.9);
+  }
+}
+
+@keyframes changeBgColorToTransparent {
+  from {
+    background-color: rgba(51, 65, 85, 0.9);
+  }
+  to {
+    background-color: transparent;
+  }
+}
+
+.turn-to-slate {
+  animation: changeBgColorToSlate;
+  animation-duration: 0.7s;
+  background-color: rgba(51, 65, 85, 0.9);
+}
+
+.turn-to-transparent {
+  animation: changeBgColorToTransparent;
+  animation-duration: 0.7s;
+  background-color: transparent;
 }
 
 /* HERO */

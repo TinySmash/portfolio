@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import { useEffect, useState, useRef } from 'react';
 
 function Navbar() {
   let menuOpened = false;
@@ -12,8 +13,32 @@ function Navbar() {
 
   const navigate = useNavigate();
 
+  // const [navBg, setNavBg] = useState('transparent');
+  const navbar = useRef('');
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.pageYOffset > 70) {
+        navbar.current?.classList.add('turn-to-slate');
+        navbar.current?.classList.remove('turn-to-transparent');
+      } else {
+        navbar.current?.classList.add('turn-to-transparent');
+        navbar.current?.classList.remove('turn-to-slate');
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    // return () => {
+    //   window.removeEventListener('scroll', handleScroll);
+    // };
+  }, []);
+
   return (
-    <header className="flex fixed w-full h-16 px-5 sm:px-8 justify-between items-center z-50">
+    <header
+      className="flex fixed w-full h-20 pb-5 px-5 sm:px-8 justify-between items-center z-50 turn-to-transparent"
+      ref={navbar}
+    >
       <h1
         className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-slate-200 font-semibold cursor-pointer"
         onClick={() => navigate('/')}

@@ -72,7 +72,10 @@ export default function Skills() {
         <div className="w-full h-auto flex flex-wrap justify-center">
           {skillsArray.map(e => {
             return (
-              <div className="relative w-48 lg:w-1/5 h-32 mx-2 my-4 px-5 pb-2 pt-3 rounded-xl bg-sharp-glass flex justify-center">
+              <div
+                className="relative w-48 lg:w-1/5 h-32 mx-2 my-4 px-5 pb-2 pt-3 rounded-xl bg-sharp-glass flex justify-center"
+                key={e.id}
+              >
                 <h1 className="text-slate-200 text-2xl font-semibold">
                   {e.name}
                 </h1>

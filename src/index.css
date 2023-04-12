@@ -98,6 +98,27 @@ Fragment {
   background-color: transparent;
 }
 
+@keyframes dropDownNav {
+  from {
+    transform: translateY(-40px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+
+.navDropDown {
+  animation-name: dropDownNav;
+  animation-duration: 0.7s;
+}
+
+.beforeDrop {
+  transform: translateY(-40px);
+  opacity: 0;
+}
+
 /* HERO */
 
 @keyframes socialMediaIcon {

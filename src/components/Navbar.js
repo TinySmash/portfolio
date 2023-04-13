@@ -32,7 +32,6 @@ function Navbar() {
         dropDownElements.splice(1, 0, e);
       });
     }
-    console.log(dropDownElements);
 
     setTimeout(() => {
       dropDownElements.forEach(ele => {
@@ -41,6 +40,19 @@ function Navbar() {
           ele.classList.remove('beforeDrop');
         }, 300 * dropDownElements.indexOf(ele));
       });
+
+      setTimeout(() => {
+        [
+          navNameRef.current,
+          mobileMenuButtonRef.current,
+          ...reversedMenuElements,
+          CTAbuttonRef.current
+        ].forEach(e => {
+          if (e && e?.classList.contains('beforeDrop')) {
+            e?.classList.remove('beforeDrop');
+          }
+        });
+      }, 5000);
     }, 400);
 
     const handleScroll = () => {

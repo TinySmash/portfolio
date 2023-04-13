@@ -406,3 +406,34 @@ Fragment {
     height: 75vw;
   }
 }
+
+@keyframes leftApp {
+  from {
+    opacity: 50%;
+    transform: translateX(-100%);
+  }
+  to {
+    opacity: 100%;
+    transform: translateX(0);
+  }
+}
+
+@keyframes rightApp {
+  from {
+    opacity: 50%;
+    transform: translateX(100%);
+  }
+  to {
+    opacity: 100%;
+    transform: translateX(0);
+  }
+}
+
+.leftAppearence {
+  animation: leftApp;
+  animation-duration: 0.7s;
+}
+.rightAppearence {
+  animation: rightApp;
+  animation-duration: 0.7s;
+}

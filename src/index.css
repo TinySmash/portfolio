@@ -145,8 +145,6 @@ Fragment {
   background-repeat: no-repeat;
 }
 
-/* HERO */
-
 @keyframes aboutTitle {
   from {
     transform: translateX(-100px);
@@ -255,7 +253,7 @@ Fragment {
 
 .featureApp {
   animation: featuresAppearing;
-  animation-duration: 0.5s;
+  animation-duration: 0.4s;
 }
 
 @keyframes UIFLOW {

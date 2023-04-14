@@ -20,7 +20,6 @@ function Hero() {
       const typingEffect = setInterval(() => {
         if (title.current == undefined || Name.current == undefined) {
           clearInterval(typingEffect);
-          clearInterval(changePText);
         } else {
           if (titleCount < heroTitle[titlePart].length && titlePart == 0) {
             titleCount++;
@@ -56,26 +55,34 @@ function Hero() {
 
       let pIndex = 0;
 
-      const changePText = setInterval(e => {
-        e?.preventDefault();
-        const Ps = ['Front end developer', 'UI designer'];
-        if (pText.current == undefined || null) {
-          clearInterval(changePText);
-          pIndex = 0;
-        } else {
-          pText.current?.classList.add('featureApp');
-          setTimeout(e => {
-            e?.preventDefault();
-            pText.current?.classList.remove('featureApp');
-          }, 1500);
+      let changePText = setInterval(() => {});
 
-          pText.current.innerHTML = Ps[pIndex];
-          pIndex++;
-          if (pIndex == 2) {
-            pIndex = 0;
-          }
+      setTimeout(() => {
+        if (title.current == undefined || Name.current == undefined) {
+          clearInterval(changePText);
         }
-      }, 4000);
+
+        changePText = setInterval(e => {
+          e?.preventDefault();
+          const Ps = ['Front end developer', 'UI designer', 'Content creator'];
+          if (pText.current == undefined || null) {
+            clearInterval(changePText);
+            pIndex = 0;
+          } else {
+            pText.current?.classList.add('featureApp');
+            setTimeout(e => {
+              e?.preventDefault();
+              pText.current?.classList.remove('featureApp');
+            }, 1200);
+
+            pText.current.innerHTML = Ps[pIndex];
+            pIndex++;
+            if (pIndex == Ps.length) {
+              pIndex = 0;
+            }
+          }
+        }, 2000);
+      }, 2300);
     }, 1000);
   }, []);
 

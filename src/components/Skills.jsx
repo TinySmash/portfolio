@@ -6,9 +6,6 @@ import influencer from '../images/influencer.png';
 import coding from '../images/coding.png';
 import writing from '../images/writing.png';
 import vector from '../images/vector.png';
-import p1 from '../images/project-1.png';
-import p2 from '../images/project-2.png';
-import p3 from '../images/project-3.png';
 
 export default function Skills() {
   const navigate = useNavigate();
@@ -47,7 +44,7 @@ export default function Skills() {
         }
       }
       return () => clearInterval(changeFeaturesText);
-    }, 3000);
+    }, 2000);
   }, []);
 
   // APPEARING DESIGNS
@@ -188,20 +185,14 @@ export default function Skills() {
           ref={ref}
         >
           {inView && triggerDesign()}
-          <li
-            className={`skilldes w-full md:w-2/3 h-auto border-2 border-sky-600 mb-6 rounded-md p-1`}
-          >
-            <img src={p1} alt="" loading="lazy"></img>
+          <li className="skilldes w-full md:w-2/3 h-auto border-2 border-sky-600 mb-6 rounded-md p-1">
+            <img src="" alt="" loading="lazy"></img>
           </li>
-          <li
-            className={`skilldes w-full md:w-2/3 md:ml-[14%] h-auto border-2 border-sky-600 mb-6 rounded-md p-1`}
-          >
-            <img src={p2} alt="" loading="lazy"></img>
+          <li className="skilldes w-full md:w-2/3 md:ml-[14%] h-auto border-2 border-sky-600 mb-6 rounded-md p-1">
+            <img src="" alt="" loading="lazy"></img>
           </li>
-          <li
-            className={`skilldes w-full md:w-2/3 md:ml-[28%] h-auto border-2 border-sky-600 rounded-md p-1`}
-          >
-            <img src={p3} alt="" loading="lazy"></img>
+          <li className="skilldes w-full md:w-2/3 md:ml-[28%] h-auto border-2 border-sky-600 rounded-md p-1">
+            <img src="" alt="" loading="lazy"></img>
           </li>
         </ul>
         {/* <button className='CTC relative w-auto bg-sky-500 p-2 rounded-full text-slate-200 font-bold text-2xl -bottom-6  md:text-3xl lg:text-4xl ml-auto' onClick={() => {navigate("/")}}>Go back home</button> */}

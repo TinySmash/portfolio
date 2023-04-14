@@ -80,6 +80,10 @@ export default function LetsWork() {
     }
   }
 
+  window.onbeforeunload = function () {
+    window.scrollTo(0, 0);
+  };
+
   return (
     <div className="w-full h-auto min-h-screen bg-sharp-glass absolute">
       <section className="w-full h-auto min-h-screen relative p-2 circles mb-10">

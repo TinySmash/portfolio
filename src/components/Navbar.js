@@ -70,7 +70,7 @@ function Navbar() {
 
   return (
     <header
-      className="flex fixed w-full h-[90px] sm:h-[88px] pb-5 px-5 sm:px-8 justify-between items-center z-50 turn-to-transparent"
+      className="flex fixed w-full h-[90px] sm:h-[88px] pb-5 px-5 sm:px-8 justify-between items-center z-50 turn-to-transparent rounded-b-md"
       ref={navbarRef}
     >
       <h1

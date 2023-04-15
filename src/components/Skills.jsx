@@ -99,7 +99,7 @@ export default function Skills() {
         </div>
 
         <ul className="list-none flex flex-wrap w-full h-auto justify-center">
-          <li className="skilldesc w-2/3 md:w-[45%] h-auto md:h-80 border-2 border-sky-600 mr-4 mb-6 bg-slate-700 rounded-3xl p-3">
+          <li className="skilldesc w-5/6 sm:w-2/3 md:w-[45%] h-auto md:h-80 border-2 border-sky-600 mr-4 mb-6 bg-slate-700 rounded-3xl p-3">
             <img
               src={coding}
               alt=""
@@ -116,7 +116,7 @@ export default function Skills() {
               technologies like HTML, CSS, Tailwindcss, and ReactJs.
             </p>
           </li>
-          <li className="skilldesc w-2/3 md:w-[45%] h-auto md:h-80 border-2 border-sky-600 mr-4 mb-6 bg-slate-700 rounded-3xl p-3">
+          <li className="skilldesc w-5/6 sm:w-2/3 md:w-[45%] h-auto md:h-80 border-2 border-sky-600 mr-4 mb-6 bg-slate-700 rounded-3xl p-3">
             <img
               src={vector}
               alt=""
@@ -134,7 +134,7 @@ export default function Skills() {
               clients' needs
             </p>
           </li>
-          <li className="skilldesc w-2/3 md:w-[45%] h-auto md:h-80 border-2 border-sky-600 mr-4 mb-6 bg-slate-700 rounded-3xl p-3">
+          <li className="skilldesc w-5/6 sm:w-2/3 md:w-[45%] h-auto md:h-80 border-2 border-sky-600 mr-4 mb-6 bg-slate-700 rounded-3xl p-3">
             <img
               src={writing}
               alt=""
@@ -151,7 +151,7 @@ export default function Skills() {
               it higher to drive more website traffic
             </p>
           </li>
-          <li className="skilldesc w-2/3 md:w-[45%] h-auto md:h-80 border-2 border-sky-600 mr-4 mb-6 bg-slate-700 rounded-3xl p-3">
+          <li className="skilldesc w-5/6 sm:w-2/3 md:w-[45%] h-auto md:h-80 border-2 border-sky-600 mr-4 mb-6 bg-slate-700 rounded-3xl p-3">
             <img
               src={influencer}
               alt=""

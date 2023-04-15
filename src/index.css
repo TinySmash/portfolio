@@ -132,6 +132,22 @@ Fragment {
   }
 }
 
+@keyframes socialMediaIconApp {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 100%;
+  }
+}
+
+.sm-icon-drop {
+  animation: socialMediaIconApp;
+  animation-duration: 0.7s;
+}
+
 .sm-icon:hover {
   animation: socialMediaIcon;
   animation-duration: 0.3s;
@@ -173,6 +189,11 @@ Fragment {
   animation: typing;
   animation-duration: 1s;
   animation-iteration-count: infinite;
+}
+
+.text-P {
+  font-size: 1.7rem /* 24px */;
+  line-height: 2.2rem /* 32px */;
 }
 
 /* ABOUT */

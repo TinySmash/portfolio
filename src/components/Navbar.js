@@ -56,7 +56,7 @@ function Navbar() {
     }, 400);
 
     const handleScroll = () => {
-      if (window.pageYOffset > 60) {
+      if (window.pageYOffset > 40) {
         navbarRef.current?.classList.add('turn-to-slate');
         navbarRef.current?.classList.remove('turn-to-transparent');
       } else {
@@ -70,15 +70,15 @@ function Navbar() {
 
   return (
     <header
-      className="flex fixed w-full h-20 pb-5 px-5 sm:px-8 justify-between items-center z-50 turn-to-transparent"
+      className="flex fixed w-full h-[90px] sm:h-[88px] pb-5 px-5 sm:px-8 justify-between items-center z-50 turn-to-transparent"
       ref={navbarRef}
     >
       <h1
-        className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-slate-200 font-semibold cursor-pointer beforeDrop"
+        className="text-lg flex sm:text-xl md:text-2xl lg:text-3xl text-slate-200 font-semibold cursor-pointer beforeDrop"
         onClick={() => navigate('/')}
         ref={navNameRef}
       >
-        Achraf Codes👨‍💻
+        Achraf Codes<span className="hidden sm:flex">👨‍💻</span>
       </h1>
       <nav className="w-5/12 px-6 md:flex hidden">
         <ul className="w-full flex justify-between">
@@ -129,7 +129,7 @@ function Navbar() {
         ref={mobileMenuButtonRef}
       ></button>
       <nav
-        className="mobile-menu w-4/5 px-6 fixed hidden md:hidden top-[49px]"
+        className="mobile-menu w-full sm:w-4/5 px-6 fixed hidden md:hidden top-14 sm:top-[53px]"
         ref={mobileMenuRef}
       >
         <ul className="w-full flex justify-between">

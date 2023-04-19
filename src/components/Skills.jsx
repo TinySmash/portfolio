@@ -176,13 +176,13 @@ export default function Skills() {
       <section className="skills w-full h-auto pb-12 pt-24 px-7">
         <div className="w-[130%] md:w-5/6 h-auto relative mr-[-15%] ml-[-15%] md:mx-[8.333335%]">
           <ul className="relative flex w-full h-auto pb-10 pt-7 px-5 list-none justify-between items-center">
-            <li className="unselected h-fit border-2 border-sky-600 rounded-md p-1 ">
+            <li className="unselected h-fit border-2 border-sky-600 rounded-md p-1 cursor-pointer">
               <img src={cryptoLP} alt="" loading="lazy"></img>
             </li>
-            <li className="selected h-auto border-2 border-sky-600 rounded-md p-1">
+            <li className="selected h-auto border-2 border-sky-600 rounded-md p-1 cursor-pointer">
               <img src={spidermen} alt="" loading="lazy"></img>
             </li>
-            <li className="unselected h-fit border-2 border-sky-600 rounded-md p-1">
+            <li className="unselected h-fit border-2 border-sky-600 rounded-md p-1 cursor-pointer">
               <img src={underwater} alt="" loading="lazy"></img>
             </li>
           </ul>

@@ -265,6 +265,22 @@ Fragment {
   animation-duration: 0.4s;
 }
 
+.selected {
+  @apply ml-5 mr-5 w-full;
+}
+
+.unselected {
+  @apply w-1/4 opacity-50;
+}
+
+.selected-dot {
+  @apply w-5 md:w-7 bg-slate-200;
+}
+
+.m-0-auto {
+  margin: 0 auto;
+}
+
 @keyframes UIFLOW {
   from {
     transform: translateX(100%);

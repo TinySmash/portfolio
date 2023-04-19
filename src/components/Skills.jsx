@@ -1,11 +1,13 @@
 import React, { useRef, useEffect } from 'react';
 import { useNavigate } from 'react-router';
-import { useInView } from 'react-intersection-observer';
 import ProgressBar from './ProgressBar';
 import influencer from '../images/influencer.png';
 import coding from '../images/coding.png';
 import writing from '../images/writing.png';
 import vector from '../images/vector.png';
+import cryptoLP from '../images/cryptolp.png';
+import spidermen from '../images/spidermen.jpg';
+import underwater from '../images/underwater.png';
 
 export default function Skills() {
   const navigate = useNavigate();
@@ -47,21 +49,13 @@ export default function Skills() {
     }, 2000);
   }, []);
 
-  // APPEARING DESIGNS
+  // CAROUSSEL
 
-  const [ref, inView] = useInView({
-    triggerOnce: true
-  });
-
-  const triggerDesign = () => {
-    const designs = document.querySelectorAll('.skilldes');
-    Array.from(designs).map(e => {
-      e?.classList?.add('myWebDesign');
-    });
-  };
+  const dotsRef = useRef([]);
+  const carousselElementsRef = useRef([]);
 
   return (
-    <div className="w-full h-full">
+    <div className="w-full h-full overflow-x-hidden">
       <section className="skills skill-container w-full h-auto sm:h-screen pb-12 pt-24 px-3 text-center">
         <h1 className="text-4xl sm:text-6xl font-bold text-slate-200 mb-6">
           Proficient in :
@@ -180,22 +174,39 @@ export default function Skills() {
         </h1>
       </section>
       <section className="skills w-full h-auto pb-12 pt-24 px-7">
-        <ul
-          className="relative block w-full h-auto pb-10 pt-7 px-5 list-none "
-          ref={ref}
-        >
-          {inView && triggerDesign()}
-          <li className="skilldes w-full md:w-2/3 h-auto border-2 border-sky-600 mb-6 rounded-md p-1">
-            <img src="" alt="" loading="lazy"></img>
-          </li>
-          <li className="skilldes w-full md:w-2/3 md:ml-[14%] h-auto border-2 border-sky-600 mb-6 rounded-md p-1">
-            <img src="" alt="" loading="lazy"></img>
-          </li>
-          <li className="skilldes w-full md:w-2/3 md:ml-[28%] h-auto border-2 border-sky-600 rounded-md p-1">
-            <img src="" alt="" loading="lazy"></img>
-          </li>
-        </ul>
-        {/* <button className='CTC relative w-auto bg-sky-500 p-2 rounded-full text-slate-200 font-bold text-2xl -bottom-6  md:text-3xl lg:text-4xl ml-auto' onClick={() => {navigate("/")}}>Go back home</button> */}
+        <div className="w-[130%] md:w-5/6 h-auto relative mr-[-15%] ml-[-15%] md:mx-[8.333335%]">
+          <ul className="relative flex w-full h-auto pb-10 pt-7 px-5 list-none justify-between items-center">
+            <li className="unselected h-fit border-2 border-sky-600 rounded-md p-1 ">
+              <img src={cryptoLP} alt="" loading="lazy"></img>
+            </li>
+            <li className="selected h-auto border-2 border-sky-600 rounded-md p-1">
+              <img src={spidermen} alt="" loading="lazy"></img>
+            </li>
+            <li className="unselected h-fit border-2 border-sky-600 rounded-md p-1">
+              <img src={underwater} alt="" loading="lazy"></img>
+            </li>
+          </ul>
+          <ul className="w-20 md:w-28 h-6 mx-auto flex justify-between items-center">
+            <li
+              className="w-3 h-3 sm:w-4 sm:h-4 rounded-full bg-slate-400 cursor-pointer"
+              ref={e => {
+                dotsRef.current[0] = e;
+              }}
+            ></li>
+            <li
+              className="w-3 h-3 selected-dot rounded-full bg-slate-200 cursor-pointer"
+              ref={e => {
+                dotsRef.current[1] = e;
+              }}
+            ></li>
+            <li
+              className="w-3 h-3 sm:w-4 sm:h-4 rounded-full bg-slate-400 cursor-pointer"
+              ref={e => {
+                dotsRef.current[2] = e;
+              }}
+            ></li>
+          </ul>
+        </div>
         <div className="block md:flex w-full h-auto items-center mt-10">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-200 mb-6">
             View more projects on{' '}
@@ -206,9 +217,6 @@ export default function Skills() {
               Github
             </a>
           </h1>
-          {/* <div className='sm-icon bg-slate-900 w-fit p-4 rounded-full m-auto'>
-              <a href="https://github.com/Achrafcodes" target="_blank" ><img src={github} loading="lazy" alt="" className='w-24'></img></a>
-            </div> */}
         </div>
       </section>
     </div>

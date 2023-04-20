@@ -266,11 +266,15 @@ Fragment {
 }
 
 .selected {
-  @apply ml-5 mr-5 w-full;
+  @apply ml-6 mr-6 w-full;
 }
 
 .unselected {
-  @apply w-1/4 opacity-50;
+  @apply w-1/4 ml-2 mr-2 opacity-50;
+}
+
+.unselected-plus {
+  @apply w-1/5 ml-1 mr-1 opacity-40;
 }
 
 /* @keyframes dot-selection {

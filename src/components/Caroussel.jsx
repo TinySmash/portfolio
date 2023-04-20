@@ -13,11 +13,12 @@ export default function Caroussel() {
 
   const clickCarousselElement = index => {
     setSelectedItemIndex([selectedItemIndex[1], index]);
-
-    console.log(selectedItemIndex);
   };
 
   useEffect(() => {
+    document
+      .querySelector('.unselected-plus')
+      ?.classList.replace('unselected-plus', 'unselected');
     carousselElementsRef.current[selectedItemIndex[0]]?.classList.replace(
       'selected',
       'unselected'
@@ -26,6 +27,39 @@ export default function Caroussel() {
       'unselected',
       'selected'
     );
+
+    if (
+      JSON.stringify(selectedItemIndex) === JSON.stringify([0, 2]) ||
+      JSON.stringify(selectedItemIndex) === JSON.stringify([2, 0])
+    ) {
+      console.log('help');
+
+      carousselElementsRef.current[1]?.classList.replace(
+        'unselected',
+        'selected'
+      );
+      setTimeout(() => {
+        carousselElementsRef.current[1]?.classList.replace(
+          'selected',
+          'unselected'
+        );
+      }, 150);
+    }
+
+    if (selectedItemIndex[1] !== 1) {
+      if (
+        carousselElementsRef.current[selectedItemIndex[1] - 2] !== undefined
+      ) {
+        carousselElementsRef.current[
+          selectedItemIndex[1] - 2
+        ]?.classList.replace('unselected' || 'selected', 'unselected-plus');
+      } else {
+        carousselElementsRef.current[
+          selectedItemIndex[1] + 2
+        ]?.classList.replace('unselected' || 'selected', 'unselected-plus');
+      }
+    }
+
     dotsRef.current[selectedItemIndex[0]]?.classList.replace(
       'selected-dot',
       'unselected-dot'
@@ -38,9 +72,9 @@ export default function Caroussel() {
 
   return (
     <div className="w-[130%] md:w-5/6 h-auto relative mr-[-15%] ml-[-15%] md:mx-[8.333335%]">
-      <ul className="relative flex w-full h-[60vh] pb-10 pt-7 px-5 list-none justify-between items-center ">
+      <ul className="relative flex w-full h-[60vh] lg:h-[70vh] pb-10 pt-7 px-5 list-none justify-between items-center ">
         <li
-          className="unselected h-fit border-2 border-sky-600 rounded-md p-1 cursor-pointer left"
+          className="unselected h-fit border-2 border-sky-600 rounded-md p-1 cursor-pointer left transition-all duration-300"
           onClick={() => {
             clickCarousselElement(0);
           }}
@@ -51,7 +85,7 @@ export default function Caroussel() {
           <img src={cryptoLP} alt="" loading="lazy"></img>
         </li>
         <li
-          className="selected h-auto border-2 border-sky-600 rounded-md p-1 cursor-pointer"
+          className="selected h-auto border-2 border-sky-600 rounded-md p-1 cursor-pointer transition-all duration-300"
           onClick={() => {
             clickCarousselElement(1);
           }}
@@ -62,7 +96,7 @@ export default function Caroussel() {
           <img src={spidermen} alt="" loading="lazy"></img>
         </li>
         <li
-          className="unselected h-fit border-2 border-sky-600 rounded-md p-1 cursor-pointer right"
+          className="unselected h-fit border-2 border-sky-600 rounded-md p-1 cursor-pointer right transition-all duration-300"
           onClick={() => {
             clickCarousselElement(2);
           }}

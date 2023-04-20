@@ -273,8 +273,42 @@ Fragment {
   @apply w-1/4 opacity-50;
 }
 
+/* @keyframes dot-selection {
+  from {
+    background-color: rgb(148 163 184);
+    width: 12px;
+  }
+  to {
+    background-color: rgb(226 232 240);
+    width: 20px;
+  }
+}
+
+@media (min-width: 640px) {
+}
+
+@keyframes dot-unselection {
+  from {
+    background-color: rgb(226 232 240);
+    width: 20px;
+  }
+  to {
+    background-color: rgb(148 163 184);
+    width: 12px;
+    @media (min-width: 640px) {
+      width: 16px;
+    }
+  }
+} */
+
 .selected-dot {
   @apply w-5 md:w-7 bg-slate-200;
+  /* transition: background-color 0.5 ease-out !important; */
+}
+
+.unselected-dot {
+  @apply w-3 sm:w-4 bg-slate-400;
+  /* transition: background-color 0.5 ease-out !important; */
 }
 
 .m-0-auto {

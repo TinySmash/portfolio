@@ -1,13 +1,11 @@
-import React, { useRef, useEffect } from 'react';
+import React, { useRef, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router';
 import ProgressBar from './ProgressBar';
+import Caroussel from './Caroussel';
 import influencer from '../images/influencer.png';
 import coding from '../images/coding.png';
 import writing from '../images/writing.png';
 import vector from '../images/vector.png';
-import cryptoLP from '../images/cryptolp.png';
-import spidermen from '../images/spidermen.jpg';
-import underwater from '../images/underwater.png';
 
 export default function Skills() {
   const navigate = useNavigate();
@@ -48,11 +46,6 @@ export default function Skills() {
       return () => clearInterval(changeFeaturesText);
     }, 2000);
   }, []);
-
-  // CAROUSSEL
-
-  const dotsRef = useRef([]);
-  const carousselElementsRef = useRef([]);
 
   return (
     <div className="w-full h-full overflow-x-hidden">
@@ -173,40 +166,8 @@ export default function Skills() {
           Building stunning Web interfaces within smart web applications...
         </h1>
       </section>
-      <section className="skills w-full h-auto pb-12 pt-24 px-7">
-        <div className="w-[130%] md:w-5/6 h-auto relative mr-[-15%] ml-[-15%] md:mx-[8.333335%]">
-          <ul className="relative flex w-full h-auto pb-10 pt-7 px-5 list-none justify-between items-center">
-            <li className="unselected h-fit border-2 border-sky-600 rounded-md p-1 cursor-pointer">
-              <img src={cryptoLP} alt="" loading="lazy"></img>
-            </li>
-            <li className="selected h-auto border-2 border-sky-600 rounded-md p-1 cursor-pointer">
-              <img src={spidermen} alt="" loading="lazy"></img>
-            </li>
-            <li className="unselected h-fit border-2 border-sky-600 rounded-md p-1 cursor-pointer">
-              <img src={underwater} alt="" loading="lazy"></img>
-            </li>
-          </ul>
-          <ul className="w-20 md:w-28 h-6 mx-auto flex justify-between items-center">
-            <li
-              className="w-3 h-3 sm:w-4 sm:h-4 rounded-full bg-slate-400 cursor-pointer"
-              ref={e => {
-                dotsRef.current[0] = e;
-              }}
-            ></li>
-            <li
-              className="w-3 h-3 selected-dot rounded-full bg-slate-200 cursor-pointer"
-              ref={e => {
-                dotsRef.current[1] = e;
-              }}
-            ></li>
-            <li
-              className="w-3 h-3 sm:w-4 sm:h-4 rounded-full bg-slate-400 cursor-pointer"
-              ref={e => {
-                dotsRef.current[2] = e;
-              }}
-            ></li>
-          </ul>
-        </div>
+      <section className="skills absolute w-full h-auto pb-12 pt-24 px-7">
+        <Caroussel />
         <div className="block md:flex w-full h-auto items-center mt-10">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-200 mb-6">
             View more projects on{' '}

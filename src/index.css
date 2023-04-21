@@ -277,6 +277,16 @@ Fragment {
   @apply w-1/5 ml-1 mr-1 opacity-40;
 }
 
+.middle {
+  @apply mx-auto;
+}
+.right {
+  @apply right-[10%];
+}
+.left {
+  @apply left-[10%];
+}
+
 /* @keyframes dot-selection {
   from {
     background-color: rgb(148 163 184);

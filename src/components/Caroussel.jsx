@@ -8,6 +8,7 @@ export default function Caroussel() {
   const dotsRef = useRef([]);
   const carousselElementsRef = useRef([]);
   const isMounted = useRef(false);
+  const carousel = useRef('');
 
   const [selectedItemIndex, setSelectedItemIndex] = useState([null, 1]);
 
@@ -16,6 +17,17 @@ export default function Caroussel() {
   };
 
   useEffect(() => {
+    if (selectedItemIndex[1] === 0) {
+      carousel.current?.classList.replace('middle', 'left');
+      carousel.current?.classList.replace('right', 'left');
+    } else if (selectedItemIndex[1] === 2) {
+      carousel.current?.classList.replace('middle', 'right');
+      carousel.current?.classList.replace('left', 'right');
+    } else if (selectedItemIndex[1] === 1) {
+      carousel.current?.classList.replace('left', 'middle');
+      carousel.current?.classList.replace('right', 'middle');
+    }
+
     document
       .querySelector('.unselected-plus')
       ?.classList.replace('unselected-plus', 'unselected');
@@ -32,8 +44,6 @@ export default function Caroussel() {
       JSON.stringify(selectedItemIndex) === JSON.stringify([0, 2]) ||
       JSON.stringify(selectedItemIndex) === JSON.stringify([2, 0])
     ) {
-      console.log('help');
-
       carousselElementsRef.current[1]?.classList.replace(
         'unselected',
         'selected'
@@ -71,8 +81,11 @@ export default function Caroussel() {
   }, [selectedItemIndex]);
 
   return (
-    <div className="w-[130%] md:w-5/6 h-auto relative mr-[-15%] ml-[-15%] md:mx-[8.333335%]">
-      <ul className="relative flex w-full h-[60vh] lg:h-[70vh] pb-10 pt-7 px-5 list-none justify-between items-center ">
+    <div className="w-[130%] md:w-5/6 mx-[15%] h-auto relative md:mx-[8.333335%]">
+      <ul
+        className="relative middle flex w-full h-[60vh] lg:h-[70vh] pb-10 pt-7 px-5 list-none justify-between items-center "
+        ref={carousel}
+      >
         <li
           className="unselected h-fit border-2 border-sky-600 rounded-md p-1 cursor-pointer left transition-all duration-300"
           onClick={() => {

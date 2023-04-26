@@ -49,7 +49,7 @@ export default function Skills() {
 
   return (
     <div className="w-full h-full overflow-x-hidden">
-      <section className="skills skill-container w-full h-auto sm:h-screen pb-12 pt-24 px-3 text-center">
+      <section className="skills max-w-screen w-auto h-auto sm:h-screen pb-12 pt-24 px-3 text-center">
         <h1 className="text-4xl sm:text-6xl font-bold text-slate-200 mb-6">
           Proficient in :
         </h1>
@@ -166,10 +166,10 @@ export default function Skills() {
           Building stunning Web interfaces within smart web applications...
         </h1>
       </section>
-      <section className="skills absolute w-full h-auto pb-12 pt-24 px-7">
+      <section className="skills w-full max-w-full h-auto pb-12 pt-24">
         <Caroussel />
         <div className="block md:flex w-full h-auto items-center mt-10">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-200 mb-6">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-200 mb-6 ml-16">
             View more projects on{' '}
             <a
               href="https://github.com/Achrafcodes"

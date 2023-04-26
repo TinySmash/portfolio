@@ -11,7 +11,7 @@ export default function About() {
       <h1 className="about-title mt-[70px] sm:mt-24 text-4xl md:text-5xl font-bold text-slate-200 md:ml-8">
         About me:
       </h1>
-      <p className="description text-lg sm:text-2xl md:text-3xl mt-2 sm:mt-10 text-slate-300 bg-gray-900 rounded-xl p-6 md:w-2/3 mx-auto z-10">
+      <p className="description text-lg sm:text-2xl lg:text-3xl mt-2 sm:mt-10 text-slate-300 bg-gray-900 rounded-xl p-6 md:w-2/3 mx-auto z-10">
         Hello, <br />
         My name Is <span className="text-sky-400">Achraf</span>, a front-end
         ReactJs web developer, designer and content creator since 2020 from

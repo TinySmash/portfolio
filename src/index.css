@@ -266,25 +266,33 @@ Fragment {
 }
 
 .selected {
-  @apply ml-6 mr-6 w-full;
+  @apply mx-3 md:mx-6 w-full;
 }
 
 .unselected {
-  @apply w-1/4 ml-2 mr-2 opacity-50;
+  @apply w-1/4 mx-1 md:mx-2 opacity-50;
 }
 
 .unselected-plus {
-  @apply w-1/5 ml-1 mr-1 opacity-40;
+  @apply w-1/5 mx-[2px] md:mx-1 opacity-40;
 }
 
 .middle {
   @apply mx-auto;
 }
 .right {
-  @apply right-[10%];
+  @apply right-[7%] sm:right-[8%];
 }
 .left {
-  @apply left-[10%];
+  @apply left-[7%] sm:left-[8%];
+}
+
+.unselected-plus.right-e {
+  @apply scale-x-75;
+}
+
+.unselected-plus.left-e {
+  @apply scale-x-75;
 }
 
 /* @keyframes dot-selection {
@@ -316,7 +324,7 @@ Fragment {
 } */
 
 .selected-dot {
-  @apply w-5 md:w-7 bg-slate-200;
+  @apply w-6 md:w-7 bg-slate-200;
   /* transition: background-color 0.5 ease-out !important; */
 }
 
